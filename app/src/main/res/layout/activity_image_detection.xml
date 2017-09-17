@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_image_detection"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.android.apprepo.ganesh.selflearnandroid.ImageDetectionActivity">
+
+    <TextView
+        android:text="The response from google cloud vision api,"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/responselabel"
+        android:fontFamily="sans-serif"
+        android:textSize="14sp"
+        android:layout_alignParentStart="true" />
+
+
+    <Button
+        android:text="Take Photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="26dp"
+        android:id="@+id/cameraButton"
+        android:onClick="takePhoto" />
+
+    <ImageView
+        android:id="@+id/speaker"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/photo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/speaking"
+        android:visibility="invisible"/>
+
+    <WebView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/photo"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/speakingWebview"/>
+
+    <ImageView
+        android:id="@+id/photo"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_above="@+id/cameraButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/responselabel"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="25dp">
+
+        <TextView
+            android:id="@+id/responseString"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload image. You will see the json response here!"/>
+
+    </ScrollView>
+
+
+</RelativeLayout>
